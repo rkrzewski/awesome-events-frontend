@@ -1,0 +1,50 @@
+{
+  "name": "gulp3",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.10.1",
+    "gulp": "^3.9.0",
+    "gulp-cached": "^1.1.0",
+    "gulp-clone": "^1.0.0",
+    "gulp-cssnano": "^2.0.1",
+    "gulp-flatten": "^0.2.0",
+    "gulp-gzip": "^1.2.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-jspm": "^0.5.5",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^6.0.1",
+    "gulp-rev-replace": "^0.4.3",
+    "gulp-sass": "^2.1.1",
+    "gulp-scss-lint": "^0.3.8",
+    "gulp-scss-lint-stylish": "^1.0.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-systemjs-resolver": "0.0.6",
+    "gulp-uglify": "^1.5.1",
+    "http-proxy-middleware": "^0.9.0",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.1.0",
+    "jspm": "^0.16.19",
+    "q": "^1.4.1",
+    "rev-del": "^1.0.5"
+  },
+  "jspm": {
+    "directories": {
+      "packages": "jspm_modules"
+    },
+    "configFile": "jspm.js",
+    "dependencies": {
+      "angular": "npm:angular@1.4.8",
+      "angular-websocket": "npm:angular-websocket@^1.0.14",
+      "bootstrap-sass": "github:twbs/bootstrap-sass@^3.3.6",
+      "html": "github:jamespamplin/plugin-ng-template@0.1.1",
+      "roboto-fontface": "github:choffmeister/roboto-fontface-bower@^0.4.3"
+    },
+    "devDependencies": {}
+  },
+  "scripts": {
+    "jspm-install": "jspm install",
+    "gulp-build": "gulp build"
+  }
+}

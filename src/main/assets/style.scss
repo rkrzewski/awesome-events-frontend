@@ -1,0 +1,12 @@
+@import "~angular/angular-csp";
+
+$icon-font-path: "fonts/";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+$roboto-font-path: "fonts";
+// scss-lint:disable ImportPath -- needed to resolve ambiguity
+@import "~roboto-fontface/css/roboto-fontface.scss";
+
+body {
+  font-family: "Roboto";
+}

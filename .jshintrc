@@ -1,0 +1,29 @@
+{
+  "bitwise": true,
+  "camelcase": true,
+  "eqeqeq" : true,
+  "es3" : true,
+  "forin": true,
+  "immed": true,
+  "indent": false,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "noempty": true,
+  "nonew": true,
+  "plusplus": false,
+  "quotmark": "double",
+  "undef": true,
+  "unused": true,
+  "strict": true,
+  "trailing": true,
+  "maxparams": 7,
+  "maxdepth": 5,
+  "maxstatements": 20,
+  "maxcomplexity": 10,
+
+  "globals": {
+    "require" : false,
+    "module" : false
+  }
+}

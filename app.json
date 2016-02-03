@@ -1,0 +1,6 @@
+{
+  "name": "Heroku app built with SBT + node.js tools",
+  "description": "Heroku app built with SBT + node.js tools",
+  "image": "heroku/scala",
+  "addons": []
+}
