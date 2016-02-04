@@ -2,6 +2,10 @@
   "name": "gulp3",
   "version": "1.0.0",
   "private": true,
+  "engines" : {
+    "node" : "4.x",
+    "npm": "2.x"
+  },
   "devDependencies": {
     "browser-sync": "^2.10.1",
     "gulp": "^3.9.0",
