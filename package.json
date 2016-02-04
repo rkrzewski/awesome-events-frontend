@@ -2,8 +2,8 @@
   "name": "gulp3",
   "version": "1.0.0",
   "private": true,
-  "engines" : {
-    "node" : "4.x",
+  "engines": {
+    "node": "4.x",
     "npm": "2.x"
   },
   "devDependencies": {
