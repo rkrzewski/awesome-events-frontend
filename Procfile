@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/gulp-jspm-sbt -Dhttp.port=${PORT}
+web: target/universal/stage/bin/awesome-events-frontend -Dhttp.port=${PORT}
