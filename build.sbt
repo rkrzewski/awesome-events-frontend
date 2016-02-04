@@ -18,3 +18,5 @@ mappings in (Compile, packageBin) ++= {
 }
 
 unmanagedClasspath in Runtime += Attributed.blank(file("target/assets-prod"))
+
+enablePlugins(JavaAppPackaging)
