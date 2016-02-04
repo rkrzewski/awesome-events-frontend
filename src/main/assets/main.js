@@ -1,7 +1,8 @@
 var angular = require("angular");
+require("angular-route");
 require("ng-facebook");
 
-var app = angular.module("app", ["ngFacebook"]);
+var app = angular.module("app", ["ngFacebook", "ngRoute"]);
 
 app.config(function($facebookProvider) {
   $facebookProvider.setAppId('1688025888105221');
@@ -19,7 +20,7 @@ app.config(function($facebookProvider) {
   }());
 });
 
-app.controller("Main", ["$scope", "$facebook", function($scope, $facebook) {
+app.controller("Main", ["$scope", "$facebook", "$location", function($scope, $facebook, $location) {
   this.login = function() {
     $facebook.login();
   };
@@ -37,6 +38,10 @@ app.controller("Main", ["$scope", "$facebook", function($scope, $facebook) {
       }).then(function(user) {
         $scope.user = user;
       });
+      $location.path("selection");
     }
   });
 }]);
+
+require("./selection/index");
+require("./events/index");
