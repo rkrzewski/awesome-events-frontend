@@ -40,5 +40,3 @@ app.controller("Main", ["$scope", "$facebook", function($scope, $facebook) {
     }
   });
 }]);
-
-require("./app/index");
