@@ -40,6 +40,7 @@
     "configFile": "jspm.js",
     "dependencies": {
       "angular": "npm:angular@1.4.8",
+      "angular-route": "github:angular/bower-angular-route@^1.4.9",
       "bootstrap-sass": "github:twbs/bootstrap-sass@^3.3.6",
       "html": "github:jamespamplin/plugin-ng-template@0.1.1",
       "ng-facebook": "github:GoDisco/ngFacebook@^0.1.6",
