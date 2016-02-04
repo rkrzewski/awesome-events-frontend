@@ -8,6 +8,7 @@ System.config({
   },
 
   map: {
+    "ng-facebook": "github:GoDisco/ngFacebook@0.1.6",
     "angular": "npm:angular@1.4.8",
     "angular-websocket": "npm:angular-websocket@1.0.14",
     "bootstrap-sass": "github:twbs/bootstrap-sass@3.3.6",
