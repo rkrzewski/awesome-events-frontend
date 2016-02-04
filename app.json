@@ -1,6 +1,6 @@
 {
-  "name": "Heroku app built with SBT + node.js tools",
-  "description": "Heroku app built with SBT + node.js tools",
+  "name": "awesome-events-frontend",
+  "description": "Frontend module for events aggregator: ScalaWAW hackaton #4",
   "image": "heroku/scala",
   "addons": []
 }
