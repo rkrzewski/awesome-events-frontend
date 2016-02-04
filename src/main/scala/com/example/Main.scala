@@ -18,7 +18,9 @@ object Main extends App with Routes {
 
   val log = actorSystem.log
 
-  Http().bindAndHandle(routes, "0.0.0.0", 9000).onComplete {
+  val port = Option(System.getenv("PORT")).getOrElse("9000").toInt
+
+  Http().bindAndHandle(routes, "0.0.0.0", port).onComplete {
     case Success(b) ⇒ log.info("Started HTTP server at {}", b.localAddress)
     case Failure(t) ⇒ log.error(t, "Failed to start HTTP server")
   }
