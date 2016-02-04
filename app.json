@@ -3,4 +3,11 @@
   "description": "Frontend module for events aggregator: ScalaWAW hackaton #4",
   "image": "heroku/scala",
   "addons": []
+  "buildpacks": [{
+    "url": "https://github.com/heroku/heroku-buildpack-ruby"
+  }, {
+    "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+  }, {
+    "url": "https://github.com/heroku/heroku-buildpack-scala"
+  }]
 }
