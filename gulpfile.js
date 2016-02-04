@@ -196,6 +196,7 @@ gulp.task("webserver", function() {
   });
   browserSync.init({
     port: 8080,
+    open: false,
     server: {
       baseDir: destDir,
       middleware: [proxy]
