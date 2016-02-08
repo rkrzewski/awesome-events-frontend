@@ -1,8 +1,10 @@
+moment = require("moment");
 var angular = require("angular");
 require("angular-route");
 require("ng-facebook");
+require("angular-datepicker");
 
-var app = angular.module("app", ["ngFacebook", "ngRoute"]);
+var app = angular.module("app", ["ngFacebook", "ngRoute", "datePicker"]);
 
 app.config(function($facebookProvider) {
   $facebookProvider.setAppId('1688025888105221');
