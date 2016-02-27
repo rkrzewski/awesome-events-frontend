@@ -1,7 +1,6 @@
 var gulp = require("gulp"),
   plumber = require("gulp-plumber"),
   flatten = require("gulp-flatten"),
-  browserSync = require("browser-sync").create(),
   sass = require("gulp-sass"),
   sassResolver = require("gulp-systemjs-resolver"),
   jspm = require("gulp-jspm"),
@@ -18,12 +17,6 @@ var env = process.env.NODE_ENV || 'dev';
 var srcDir = "src/main/assets",
   destDir = "target/assets-" + env,
   workDir = "target/assets-tmp";
-
-function reload() {
-  return browserSync.reload({
-    stream: true
-  });
-}
 
 function passThrough() {
   return require("stream").PassThrough({
@@ -112,8 +105,7 @@ gulp.task("scss", ["fonts"], function() {
       }))
       .pipe(sass())
       .pipe(sourcemaps.write("."))
-      .pipe(gulp.dest(destDir))
-      .pipe(reload());
+      .pipe(gulp.dest(destDir));
   } else {
     var cssNano = require("gulp-cssnano"),
       revReplace = require("gulp-rev-replace"),
@@ -149,8 +141,7 @@ gulp.task("js", function() {
       }))
       .pipe(rename("app.js"))
       .pipe(sourcemaps.write("."))
-      .pipe(gulp.dest(destDir))
-      .pipe(reload());
+      .pipe(gulp.dest(destDir));
   } else {
     var uglify = require('gulp-uglify');
     return gulp.src(srcDir + "/main.js")
@@ -166,8 +157,7 @@ gulp.task("js", function() {
 gulp.task("html", ["scss", "js"], function() {
   if (env === "dev") {
     return gulp.src(srcDir + "/index.html")
-      .pipe(gulp.dest(destDir))
-      .pipe(reload());
+      .pipe(gulp.dest(destDir));
   } else {
     var revReplace = require("gulp-rev-replace"),
       manifest = gulp.src(workDir + "/*-rev-manifest.json");
@@ -179,16 +169,27 @@ gulp.task("html", ["scss", "js"], function() {
   }
 });
 
+var browserSync;
+
+function reload() {
+  browserSync && browserSync.reload();
+}
+
+gulp.task("html+reload", ["html"], reload);
+gulp.task("scss+reload", ["scss"], reload);
+gulp.task("js+reload", ["js"], reload);
+
 gulp.task("watch", function() {
-  gulp.watch(srcDir + "/index.html", ["html"]);
-  gulp.watch(srcDir + "/style.scss", ["scssLint", "scss"]);
+  gulp.watch(srcDir + "/index.html", ["html+reload"]);
+  gulp.watch(srcDir + "/style.scss", ["scssLint", "scss+reload"]);
   gulp.watch(srcDir + "/**/*.js", ["jshint"]);
   gulp.watch([srcDir + "/**/*.js", srcDir + "/**/*.html",
     "!" + srcDir + "/index.html"
-  ], ["js"]);
+  ], ["js+reload"]);
 });
 
 gulp.task("webserver", function() {
+  browserSync = require("browser-sync").create();
   var proxyMiddleware = require('http-proxy-middleware');
   var proxy = proxyMiddleware('/api', {
     target: 'http://localhost:9000',
